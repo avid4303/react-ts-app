@@ -1,22 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getPostsApi } from '../../api/PostsApi';
+import type { Post } from '../../types/Post';
 
 import LoadingMessage  from './LoadingMessage';
 import ErrorMessage from './ErrorMessage';
 
-type post = {
-  id: number;
-  thumbnailUrl: string;
-  createdAt: string;
-  categories: string[];
-  title: string;
-  content: string;
-}
-
 export default function PostList(){
 
-  const [posts, setPosts ] = useState<post[]>([]);
+  const [posts, setPosts ] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
 

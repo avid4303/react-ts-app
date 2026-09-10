@@ -1,18 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getPostDetailApi } from "../../api/PostDetailApi";
+import type { Post } from '../../types/Post';
 
 import LoadingMessage from "../../compornents/posts/LoadingMessage";
 import ErrorMessage from "../../compornents/posts/ErrorMessage";
-
-type Post = {
-  id: number;
-  title: string;
-  thumbnailUrl: string;
-  createdAt: string;
-  categories: string[];
-  content: string;
-}
 
 export default function PostDetailPage() {
 
